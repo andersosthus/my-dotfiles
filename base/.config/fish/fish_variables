@@ -1,0 +1,7 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --path MANPATH:/usr/share/man\x1e/usr/local/man\x1e/usr/local/share/man
+SETUVAR QT_QPA_PLATFORM:xcb
+SETUVAR __fish_initialized:4300
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_user_paths:/home/grapz/go/bin\x1e/home/grapz/\x2edotnet/tools\x1e/home/grapz/\x2ebin
