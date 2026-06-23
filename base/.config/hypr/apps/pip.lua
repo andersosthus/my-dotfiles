@@ -1,0 +1,6 @@
+-- hl.window_rule({ match = { title = "(Picture.{0,1}in.{0,1}[Pp]icture)" }, tag = "+pip" })
+hl.window_rule({ match = { tag = "pip" }, float = true })
+hl.window_rule({ match = { tag = "pip" }, pin = true })
+hl.window_rule({ match = { tag = "pip" }, size = { 600, 338 } })
+hl.window_rule({ match = { tag = "pip" }, keep_aspect_ratio = true })
+hl.window_rule({ match = { tag = "pip" }, opacity = "1 1" })
