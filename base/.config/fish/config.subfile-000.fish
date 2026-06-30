@@ -1,4 +1,7 @@
-fish_add_path -p /home/grapz/.dotnet/tools /home/grapz/.bin /home/grapz/go/bin
+set -gx GOPATH ~/go
+set -gx GOROOT ~/.go
+
+fish_add_path -p ~/.dotnet/tools ~/.bin ~/go/bin ~/.local/bin ~/.cargo/bin
 
 # fish_update_completions
 

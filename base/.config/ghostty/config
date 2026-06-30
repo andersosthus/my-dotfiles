@@ -1,9 +1,6 @@
-command = /usr/bin/fish
-
-theme = tokyonight_moon
-font-family = JetBrainsMono Nerd Font Mono
-font-size = 16
-adjust-cell-height = 6
+theme = TokyoNight Moon
+font-size = 14
+adjust-cell-height = 4
 
 cursor-style = block
 shell-integration-features = no-cursor
@@ -11,5 +8,14 @@ shell-integration-features = no-cursor
 window-padding-x = 7
 window-padding-y = 7
 
+keybind = clear
 keybind = super+shift+comma=reload_config
-keybind = shift+enter=text:\x1b\r
+keybind = ctrl+shift+c=copy_to_clipboard:mixed
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+tab=previous_tab
+keybind = ctrl+tab=next_tab
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+e=new_split:down
+keybind = ctrl+shift+o=new_split:right
+keybind = ctrl+shift+enter=toggle_split_zoom
+keybind = ctrl+shift+p=toggle_command_palette
