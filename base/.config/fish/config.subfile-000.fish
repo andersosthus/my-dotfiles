@@ -1,7 +1,7 @@
 set -gx GOPATH ~/go
 set -gx GOROOT ~/.go
 
-fish_add_path -p ~/.dotnet/tools ~/.bin ~/go/bin ~/.local/bin ~/.cargo/bin
+fish_add_path -p ~/.dotnet/tools ~/.bin ~/go/bin ~/.local/bin ~/.cargo/bin ~/.node/bin
 
 # fish_update_completions
 

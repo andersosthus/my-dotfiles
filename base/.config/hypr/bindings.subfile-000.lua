@@ -7,6 +7,7 @@ local menu        = "hyprlauncher"
 hl.bind(mainMod .. " + CTRL + return", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + CTRL + SHIFT + q", hl.dsp.window.close())
