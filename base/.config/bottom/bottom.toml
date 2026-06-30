@@ -1,0 +1,94 @@
+# bottom configuration
+# Theme: TokyoNight Moon
+#
+# Palette reference:
+#   bg          #222436    fg          #c8d3f5
+#   bg_dark     #1e2030    fg_dark     #828bb8
+#   bg_highlight#2f334d    comment     #636da6
+#   blue        #82aaff    cyan        #86e1fc
+#   green       #c3e88d    magenta     #c099ff
+#   orange      #ff966c    red         #ff757f
+#   yellow      #ffc777    teal        #4fd6be
+#   border/blue7#589ed7    purple      #fca7ea
+
+[flags]
+# Refresh data every second.
+rate = "1s"
+# Use Celsius for temperatures.
+temperature_type = "c"
+# Hide the time axis until you zoom, then show it briefly.
+autohide_time = true
+# Dot markers render crisply at any terminal scale.
+dot_marker = true
+# Show scroll position + a scroll bar on table widgets.
+show_table_scroll_position = true
+show_table_scroll_bar = true
+# Show the battery widget.
+battery = true
+
+[processes]
+# Start the process widget in tree mode (supersedes grouping).
+default_tree = true
+# Match process searches case-insensitively, treat the query as regex.
+case_sensitive = false
+regex = true
+
+[styles.cpu]
+all_entry_colour = "#86e1fc"
+avg_entry_colour = "#ff757f"
+cpu_core_colours = [
+  "#82aaff",
+  "#c3e88d",
+  "#ffc777",
+  "#c099ff",
+  "#4fd6be",
+  "#ff966c",
+  "#fca7ea",
+  "#65bcff",
+]
+
+[styles.temp_graph]
+temp_graph_colour_styles = [
+  "#c3e88d",
+  "#ffc777",
+  "#ff966c",
+  "#ff757f",
+]
+
+[styles.memory]
+ram_colour = "#82aaff"
+cache_colour = "#c099ff"
+swap_colour = "#ffc777"
+arc_colour = "#4fd6be"
+gpu_colours = [
+  "#c3e88d",
+  "#86e1fc",
+  "#fca7ea",
+  "#ff966c",
+]
+
+[styles.network]
+rx_colour = "#c3e88d"
+tx_colour = "#82aaff"
+rx_total_colour = "#4fd6be"
+tx_total_colour = "#65bcff"
+
+[styles.battery]
+high_battery_colour = "#c3e88d"
+medium_battery_colour = "#ffc777"
+low_battery_colour = "#ff757f"
+
+[styles.tables]
+headers = { colour = "#82aaff", bold = true }
+
+[styles.graphs]
+graph_colour = "#636da6"
+legend_text = { colour = "#c8d3f5" }
+
+[styles.widgets]
+border_colour = "#3b4261"
+selected_border_colour = "#82aaff"
+widget_title = { colour = "#589ed7", bold = true }
+text = { colour = "#c8d3f5" }
+selected_text = { colour = "#1e2030", bg_colour = "#82aaff" }
+disabled_text = { colour = "#636da6" }

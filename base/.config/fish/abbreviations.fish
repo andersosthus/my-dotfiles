@@ -3,6 +3,12 @@ abbr -a -g du 'du -h'
 abbr -a -g mkdir 'mkdir -pv'
 
 abbr -a -g vi 'nvim'
+abbr -a -g ls 'eza'
+abbr -a -g cat 'bat'
+abbr -a -g du 'dust'
+abbr -a -g top 'btm'
+abbr -a -g find 'fd'
+abbr -a -g ps 'procs'
 
 abbr -a -g claude-yolo 'claude --dangerously-skip-permissions'
 
