@@ -24,6 +24,13 @@ opt.scrolloff = 10
 opt.termguicolors = true
 opt.inccommand = "split" -- live preview of :substitute
 
+-- Completion popup (native LSP completion, see plugins/lsp.lua):
+--   menuone  - show the menu even when there's only one match
+--   noselect - never auto-select/insert an entry; you pick it explicitly.
+--              Without this the first item is preselected and inserted,
+--              forcing you to erase it when it's not what you wanted.
+opt.completeopt = { "menu", "menuone", "noselect" }
+
 opt.list = true
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 

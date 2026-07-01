@@ -1,8 +1,8 @@
-local mainMod     = "SUPER"
+local mainMod = "SUPER"
 
-local terminal    = "ghostty"
+local terminal = "ghostty"
 local fileManager = "thunar"
-local menu        = "hyprlauncher"
+local menu = "hyprlauncher"
 
 hl.bind(mainMod .. " + CTRL + return", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
@@ -25,12 +25,10 @@ hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
 
 for i = 1, 5 do
-    local n = tostring(i)
-    hl.bind(mainMod .. " + " .. n, hl.dsp.focus({ workspace = "r~" .. n }))
-    hl.bind(mainMod .. " + SHIFT + " .. n, hl.dsp.window.move({ workspace = "r~" .. n, follow = true }))
+	local n = tostring(i)
+	hl.bind(mainMod .. " + " .. n, hl.dsp.focus({ workspace = "r~" .. n }))
+	hl.bind(mainMod .. " + SHIFT + " .. n, hl.dsp.window.move({ workspace = "r~" .. n, follow = true }))
 end
-
-hl.bind(mainMod .. " + SHIFT + CTRL + n", hl.dsp.workspace.move({ monitor = "+1" }))
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
@@ -41,14 +39,26 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind(mainMod .. " + SHIFT + s", hl.dsp.exec_cmd("hyprshot -m window -m region --clipboard-only"))
 hl.bind(mainMod .. " + CTRL + SHIFT + s", hl.dsp.exec_cmd("hyprshot -m window -m region"))
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-    { locked = true, repeating = true })
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMute",
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMicMute",
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+	{ locked = true, repeating = true }
+)
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s 10%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 10%-"), { locked = true, repeating = true })
 
