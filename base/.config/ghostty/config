@@ -18,4 +18,8 @@ keybind = ctrl+shift+t=new_tab
 keybind = ctrl+shift+e=new_split:down
 keybind = ctrl+shift+o=new_split:right
 keybind = ctrl+shift+enter=toggle_split_zoom
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+l=goto_split:right
 keybind = ctrl+shift+p=toggle_command_palette

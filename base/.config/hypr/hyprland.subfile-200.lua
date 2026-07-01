@@ -1,74 +1,75 @@
 hl.config({
-    general = {
-        gaps_in          = 5,
-        gaps_out         = 10,
+	general = {
+		gaps_in = 5,
+		gaps_out = 10,
 
-        border_size      = 2,
+		border_size = 2,
 
-        col              = {
-            active_border   = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-            inactive_border = "rgba(595959aa)",
-        },
+		col = {
+			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			inactive_border = "rgba(595959aa)",
+		},
 
-        resize_on_border = false,
-        allow_tearing    = false,
+		resize_on_border = false,
+		allow_tearing = false,
 
-        layout           = "dwindle",
-    },
+		layout = "dwindle",
+	},
 
-    decoration = {
-        rounding         = 10,
-        rounding_power   = 2,
+	decoration = {
+		rounding = 10,
+		rounding_power = 2,
 
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+		active_opacity = 1.0,
+		inactive_opacity = 1.0,
 
-        shadow           = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
-        },
+		shadow = {
+			enabled = true,
+			range = 4,
+			render_power = 3,
+			color = 0xee1a1a1a,
+		},
 
-        blur             = {
-            enabled  = true,
-            size     = 3,
-            passes   = 1,
-            vibrancy = 0.1696,
-        },
-    },
+		blur = {
+			enabled = true,
+			size = 3,
+			passes = 1,
+			vibrancy = 0.1696,
+		},
+	},
 
-    animations = {
-        enabled = true,
-    },
+	animations = {
+		enabled = true,
+	},
 
-    dwindle = {
-        preserve_split = true,
-    },
+	dwindle = {
+		preserve_split = true,
+	},
 
-    master = {
-        new_status = "master",
-    },
+	master = {
+		new_status = "master",
+	},
 
-    misc = {
-        force_default_wallpaper = -1,
-        disable_hyprland_logo   = false,
-    },
+	misc = {
+		force_default_wallpaper = -1,
+		disable_hyprland_logo = false,
+	},
 
-    input = {
-        kb_layout    = "no",
-        kb_variant   = "",
-        kb_model     = "",
-        kb_options   = "",
-        kb_rules     = "",
+	input = {
+		kb_layout = "no",
+		kb_variant = "",
+		kb_model = "",
+		kb_options = "",
+		kb_rules = "",
 
-        follow_mouse = 1,
-        sensitivity  = 0,
+		follow_mouse = 1,
+		sensitivity = 0,
+		accel_profile = "flat",
 
-        touchpad     = {
-            natural_scroll = true,
-        },
-    },
+		touchpad = {
+			natural_scroll = true,
+		},
+	},
 })
 
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
@@ -95,8 +96,8 @@ hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "al
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
 
 hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
+	name = "epic-mouse-v1",
+	sensitivity = -0.5,
 })
 
 require("bindings")
