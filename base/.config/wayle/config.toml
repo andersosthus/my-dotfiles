@@ -12,9 +12,9 @@ right = ["volume", "network", "bluetooth", "battery", "systray"]
 format = "%H:%M"
 
 [modules.hyprland-workspaces]
-min-workspace-count = 5
+min-workspace-count = 30
 monitor-specific = true
-display-mode = "none"
+display-mode = "label"
 numbering = "relative"
 
 # Tokyo Night Moon

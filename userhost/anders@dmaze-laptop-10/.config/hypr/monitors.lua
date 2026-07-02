@@ -33,44 +33,8 @@ hl.monitor({
 	scale = 1,
 })
 
---[[
-hl.workspace_rule({
-	workspace = "r[1-5]",
-	default = true,
-	persistent = true,
-	monitor = "eDP-1",
-})
-
-hl.workspace_rule({
-	workspace = "r[1-5]",
-	default = true,
-	persistent = true,
-	monitor = "desc:Samsung Electric Company LS27A800U HNMW800032",
-})
-
-hl.workspace_rule({
-	workspace = "r[1-5]",
-	default = true,
-	persistent = true,
-	monitor = "desc:Samsung Electric Company LS27A800U HNMW800038",
-})
-
-hl.workspace_rule({
-	workspace = "r[1-5]",
-	default = true,
-	persistent = true,
-	monitor = "desc:Samsung Electric Company LC49G95T H4ZNC06918",
-})
-]]
-
--- TEMPORARY: explicit per-workspace pins in place of the r[1-5] range rules
--- above. Hyprland's workspacerules table is keyed by workspaceString, so
--- three identical "r[1-5]" entries collide and only the last one survives.
--- wayle's bar also only parses literal workspace IDs from
--- `hyprctl workspacerules`, so relative-per-monitor numbering in the bar
--- silently falls back to absolute IDs. Revert to the r[1-5] rules above
--- once wayle-rs/wayle fixes its workspace-rule parsing to understand
--- range syntax (see https://github.com/wayle-rs/wayle).
+-- We have to bind each workspace/monitor pair directly because Hyprland Lua
+-- config doesn't support the r[1-5] syntax
 local monitor_workspaces = {
 	["eDP-1"] = { 1, 2, 3, 4, 5 },
 	["desc:Samsung Electric Company LS27A800U HNMW800038"] = { 6, 7, 8, 9, 10 },
@@ -79,10 +43,10 @@ local monitor_workspaces = {
 }
 
 for monitor, workspaces in pairs(monitor_workspaces) do
-	for _, ws in ipairs(workspaces) do
+	for i, ws in ipairs(workspaces) do
 		hl.workspace_rule({
 			workspace = tostring(ws),
-			default = true,
+			default = i == 1,
 			persistent = true,
 			monitor = monitor,
 		})
