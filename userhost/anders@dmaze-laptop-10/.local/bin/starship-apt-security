@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Count pending apt SECURITY updates and cache the number for Starship.
+# Uses a simulated upgrade (-s), so it only reads the local apt lists that
+# apt-daily.timer keeps fresh — no network, no root, no dpkg locking.
+set -euo pipefail
+
+cache="${XDG_CACHE_HOME:-$HOME/.cache}/starship-apt-security"
+
+count=$(apt-get -s -o Debug::NoLocking=true dist-upgrade 2>/dev/null \
+  | grep -c -E '^Inst .*-security' || true)
+
+# Write atomically so Starship never reads a half-written file.
+printf '%s' "${count:-0}" > "${cache}.tmp"
+mv "${cache}.tmp" "$cache"

@@ -1,0 +1,6 @@
+[Unit]
+Description=Compute pending apt security-update count for Starship
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/starship-apt-security

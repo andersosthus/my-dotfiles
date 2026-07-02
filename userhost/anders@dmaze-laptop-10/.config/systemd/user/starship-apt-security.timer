@@ -1,0 +1,13 @@
+[Unit]
+Description=Periodically refresh the Starship apt security-update count
+
+[Timer]
+# Populate shortly after login, then re-check hourly. The count only
+# changes after apt-daily refreshes the lists or you install something,
+# so hourly is plenty. Persistent catches up if the machine was asleep.
+OnStartupSec=2min
+OnUnitActiveSec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
