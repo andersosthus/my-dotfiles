@@ -1,0 +1,34 @@
+[bar]
+location = "top"
+scale = 1
+
+[[bar.layout]]
+monitor = "*"
+left = ["dashboard", "hyprland-workspaces"]
+center = ["clock"]
+right = ["volume", "network", "bluetooth", "battery", "systray"]
+
+[modules.clock]
+format = "%H:%M"
+
+[modules.hyprland-workspaces]
+min-workspace-count = 5
+monitor-specific = true
+display-mode = "none"
+numbering = "relative"
+
+# Tokyo Night Moon
+[styling]
+theme-provider = "wayle"
+
+[styling.palette]
+bg = "#1e2030"
+surface = "#222436"
+elevated = "#2f334d"
+fg = "#c8d3f5"
+fg-muted = "#828bb8"
+primary = "#82aaff"
+red = "#ff757f"
+yellow = "#ffc777"
+green = "#c3e88d"
+blue = "#82aaff"
