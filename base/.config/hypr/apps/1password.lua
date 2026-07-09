@@ -1,1 +1,1 @@
-hl.window_rule({ match = { class = "^(1Password)$" }, no_screen_share = true })
+hl.window_rule({ match = { class = "^(1password)$" }, no_screen_share = true, float = true })
