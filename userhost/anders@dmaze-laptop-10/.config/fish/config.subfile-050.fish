@@ -8,3 +8,4 @@ fish_add_path -p $ANDROID_HOME/platform-tools
 fish_add_path -p $HOME/.dotnet
 fish_add_path -p $HOME/.dotnet/tools
 
+mise activate fish | source
