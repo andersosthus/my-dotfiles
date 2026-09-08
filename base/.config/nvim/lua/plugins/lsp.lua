@@ -48,8 +48,29 @@ return {
       },
     }
 
+    -- Servers that mason cannot install (binary comes from the system package
+    -- manager). Enabled manually since mason-lspconfig's automatic_enable only
+    -- covers servers mason installed.
+    local system_servers = {
+      qmlls = { -- Qt QML; ships with Qt. Some distros name the binary qmlls6.
+        cmd = {
+          vim.fn.executable("qmlls6") == 1 and "qmlls6" or "qmlls",
+          -- Extra QML import path for modules the distro doesn't install type
+          -- info for (e.g. Quickshell's qmldir/*.qmltypes, taken from the Arch
+          -- package since the Ubuntu PPA build omits them).
+          "-I",
+          vim.fn.expand("~/.local/share/qml-imports"),
+        },
+      },
+    }
+
     for name, cfg in pairs(servers) do
       vim.lsp.config(name, cfg)
+    end
+
+    for name, cfg in pairs(system_servers) do
+      vim.lsp.config(name, cfg)
+      vim.lsp.enable(name)
     end
 
     require("mason").setup()
