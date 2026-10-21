@@ -1,5 +1,4 @@
 hl.on("hyprland.start", function()
-    hl.exec_cmd('hypridle')
-    hl.exec_cmd('systemctl --user start hyprpolkitagent')
-    hl.exec_cmd('~/.cargo/bin/wayle panel start')
+	hl.exec_cmd("systemctl --user start hyprpolkitagent")
+	hl.exec_cmd("qs")
 end)

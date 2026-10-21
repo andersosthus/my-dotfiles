@@ -2,7 +2,7 @@ local mainMod = "SUPER"
 
 local terminal = "ghostty"
 local fileManager = "thunar"
-local menu = "hyprlauncher"
+local menu = "qs ipc call launcher toggle"
 
 hl.bind(mainMod .. " + CTRL + return", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
@@ -13,6 +13,20 @@ hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + CTRL + SHIFT + q", hl.dsp.window.close())
 hl.bind(mainMod .. " + f", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+
+-- Notifications
+local notif = "qs ipc call notifications "
+hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd(notif .. "closeLatest"))
+hl.bind(mainMod .. " + SHIFT + comma", hl.dsp.exec_cmd(notif .. "closeAll"))
+hl.bind(mainMod .. " + CTRL + comma", hl.dsp.exec_cmd(notif .. "toggleCenter"))
+hl.bind(
+	mainMod .. " + ALT + comma",
+	hl.dsp.exec_cmd(
+		notif
+			.. 'toggleDnd | grep -q true && notify-send -u low "Silenced notifications" || notify-send "Enabled notifications"'
+	)
+)
+-- Notifications End
 
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "l" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "r" }))
